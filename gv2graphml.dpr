@@ -5,22 +5,25 @@ uses
   DotGraph in 'DotGraph.pas';
 
 
-procedure Usage;
-begin
-  Writeln('Usage: gv2graphml input.gv output.graphml');
-end;
-
 begin
   try
-    if ParamCount < 2 then
+    if (ParamCount < 1) or (ParamCount > 2) then
     begin
-      Usage;
+      Writeln('Usage:');
+      Writeln('  gv2graphml.exe input.gv');
+      Writeln('  gv2graphml.exe input.gv output.graphml');
       Exit;
     end;
 
+    var filenameGv := ParamStr(1);
+    var filenameGraphml := ChangeFileExt(ParamStr(2), '.graphml');
+
+    if ParamCount = 2 then
+      filenameGraphml := ParamStr(2);
+
     var dg := TDotGraph.Create;
-    dg.LoadFromFile(ParamStr(1));
-    dg.ExportAsGraphml(ParamStr(2));
+    dg.LoadFromFile(filenameGv);
+    dg.ExportAsGraphml(filenameGraphml);
     dg.Free;
 
     Writeln('Done');
