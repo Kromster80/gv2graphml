@@ -1,6 +1,10 @@
 # gv2graphml
 Converter of Delphi Compiler generated .gv graphs into yEd .graphml format
 
+## Requirements
+ - Delphi 12
+ - yEd (online or installed version)
+
 ## How to use
 
 1. Open your Delphi project.
