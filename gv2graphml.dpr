@@ -16,7 +16,7 @@ begin
     end;
 
     var filenameGv := ParamStr(1);
-    var filenameGraphml := ChangeFileExt(ParamStr(2), '.graphml');
+    var filenameGraphml := ChangeFileExt(ParamStr(1), '.graphml');
 
     if ParamCount = 2 then
       filenameGraphml := ParamStr(2);
