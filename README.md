@@ -14,5 +14,5 @@ Converter of Delphi Compiler generated .gv graphs into yEd .graphml format.
 4. Locate the Other Options > "Additional options to pass to the compiler"
 5. Fill in `--graphviz --graphviz-exclude=system.*;vcl.*;winapi.*` (this will skip System, VCL and WinApi units)
 6. `ProjectName.gv` will be generated on project compilation
-7. Call the `gv2graphml.exe ProjectName.gv ProjectName.graphml` to convert the graph
+7. Call the `gv2graphml.exe ProjectName.gv ProjectName.graphml` (or simply drag-n-drop the .ml file onto gv2graphml.exe) to convert the graph
 8. Use yEd to open the ProjectName.graphml
